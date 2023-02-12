@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>                   // Allows access to vectors
+using namespace std;
+
+int main() {
+    // Variables
+    int n;
+    int input = 0;
+    vector<int> userNum;
+    
+    // Get user input. 
+    cin >> n;                       // This number will determine the amount of elements in the vector.
+    for (int i = 0; i < n; i++) {
+        cin >> input;
+        userNum.push_back(input);   // Appends the input into userNum;
+    }
+
+    // Outputs the vector backwards.
+    for (int i = n - 1; i >= 0; i--) {
+        cout << userNum.at(i) << ",";
+    }
+    cout << endl;
+
+    return 0;
+}  
