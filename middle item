@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    // Variables
+    int num;
+    vector<int> userNums;
+
+    cin >> num;
+    while (num != -1) {
+        userNums.push_back(num);
+        cin >> num;
+    }
+
+    if (userNums.size() > 9) {
+        cout << "Too many numbers" << endl;
+    }
+    else {
+        cout << "Middle item: " << userNums.at(userNums.size() / 2) << endl;
+    }
+
+    return 0;
+}
