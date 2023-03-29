@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main () {
+    // Variables
+    int numWords;
+    string word;
+    vector<int> freqs;                              // Frequents
+    vector<string> words;
+
+    // Get the number of words.
+    cin >> numWords;
+
+    // Read in the words.
+    for (int i = 0; i < numWords; ++i) {
+        cin >> word;
+        words.push_back(word);
+    }
+
+    // Calculate the frequencies of each word.
+    for (int i = 0; i < words.size(); ++i) {
+        int count = 0;                              // Resetting count to 0 for every differnt word.
+        for (int j = 0; j < words.size(); ++j) {
+            if (words.at(i) == words.at(j)) {
+                count++;
+            }
+        }
+        freqs.push_back(count);                     // Saves the count of the frequencies in a different vector.
+    }
+
+    // Output the data
+    for (int i = 0; i < words.size(); ++i) {
+        cout << words.at(i) << " - " << freqs.at(i) << endl;
+    }
+
+    return 0;
+}
