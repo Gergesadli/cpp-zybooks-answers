@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <iomanip>
+using namespace std;
+
+int main () {
+    // Variables
+    float input = 0;
+    int n;
+    float max = 0;
+    vector<float> userNum;
+
+    // Get user input
+    cin >> n;           // This number will determine the number of elements in the vector.
+    for (int i = 0; i < n; i++) {
+        cin >> input;
+        userNum.push_back(input);
+        if (userNum[i] > max) {
+            max = userNum[i];
+        }
+    }
+    
+    // Output the numbers divided by the largest number in the list.
+    cout << fixed << setprecision(2);
+    for (int i = 0; i < n; i++) {
+        cout << userNum[i] / max << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
