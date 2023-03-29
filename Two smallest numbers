@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int getAndRemoveSmallest(vector<int>& vec);
+
+int main() {
+    // Variables
+    int numInts;
+    int num;
+    vector<int> userNums;
+    int small1, small2;
+
+    // Get number of ints
+    cin >> numInts;
+    
+    // Get the integers
+    for (int i = 0; i < numInts; ++i) {
+        cin >> num;
+        userNums.push_back(num);
+    }
+
+    // Get the smallest integer
+    small1 = getAndRemoveSmallest(userNums);
+
+    // Get the second smallest integer.
+    small2 = getAndRemoveSmallest(userNums);
+
+    // Output results
+    cout << small1 << " and " << small2 << endl;
+}
+
+int getAndRemoveSmallest(vector<int>& vec) {
+    int min = vec.at(0);
+    int minIndex = 0;
+
+    for (int i = 1; i < vec.size(); ++i) {
+        if (vec.at(i) < min) {
+            min = vec.at(i);
+            minIndex = i;
+        }
+    }
+
+    // Remove the minimum value from the vector
+    vec.erase(vec.begin() + minIndex);
+    return min;
+}
