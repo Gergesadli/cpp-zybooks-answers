@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+int main() {
+    // Variables
+    int numWords;
+    string word;
+    vector<string> words;
+    char letter;
+
+    // Get the number of words
+    cin >> numWords;
+
+    // Get the words
+    for (int i = 0; i < numWords; ++i) {
+        cin >> word;
+        words.push_back(word);
+    }
+
+    // Get the letter to compare.
+    cin >> letter;
+
+    // Check each word in words to see if it contains the letter.
+    // If it does, output the word with a comma.
+    for (int i = 0; i < words.size(); ++i) {
+        if (words.at(i).find(letter) != string::npos) {
+            cout << words.at(i) << ",";
+        }
+    }
+    cout << endl;
+
+   return 0;
+}
