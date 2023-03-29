@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int numInts;
+    int num;
+    vector<int> userNums;
+    int low;
+    int high;
+
+    // Get number of numbers.
+    cin >> numInts;
+
+    // Get the integer.
+    for (int i = 0; i < numInts; ++i) {
+        cin >> num;
+        userNums.push_back(num);
+    }
+
+    // Get the low end.
+    cin >> low;
+
+    // Get the high end.
+    cin >> high;
+
+    // Loop over the vector and display the values betweent the low and high inclusive.
+    for (int i = 0; i < userNums.size(); ++i) {
+        if (userNums.at(i) >= low && userNums.at(i) <= high) {
+            cout << userNums.at(i) << ",";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
